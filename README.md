@@ -21,7 +21,7 @@ This project provides a **Pomodoro Timer** overlay for OBS, allowing streamers t
 
 ### 2. **Set Up in OBS**
    1. Open OBS and go to `Tools > Scripts`.
-   2. Add the `pomodoro_timer_updated.lua` script.
+   2. Add the `pomodoro_timer.lua` script.
    3. Configure your timer settings (work time, break time, total sessions).
    4. Define hotkeys for starting, stopping, and resetting the timer in `Settings > Hotkeys`.
 
