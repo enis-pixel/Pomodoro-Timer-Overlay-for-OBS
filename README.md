@@ -14,7 +14,7 @@ This project provides a **Pomodoro Timer** overlay for OBS, allowing streamers t
 ## Installation and Usage
 
 ### 1. **Download Files**
-   - Clone or download this repository as a ZIP file and extract it.
+   - Clone or download this repository as a [ZIP](https://github.com/enis-pixel/Pomodoro-Timer-Overlay-for-OBS/archive/refs/heads/main.zip) file and extract it.
    - Ensure the following files are present:
      - `pomodoro_timer.lua`
      - `timer_ui.html`
