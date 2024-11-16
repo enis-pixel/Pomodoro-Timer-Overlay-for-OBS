@@ -16,7 +16,7 @@ This project provides a **Pomodoro Timer** overlay for OBS, allowing streamers t
 ### 1. **Download Files**
    - Clone or download this repository as a ZIP file and extract it.
    - Ensure the following files are present:
-     - `pomodoro_timer_updated.lua`
+     - `pomodoro_timer.lua`
      - `timer_ui.html`
 
 ### 2. **Set Up in OBS**
