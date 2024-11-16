@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+    
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: transparent;
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+    }
+    .timer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(44, 44, 44, 0.9);
+      padding: 20px 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+      max-width: 500px;
+    }
+    .timer {
+      font-size: 6rem;
+      font-weight: bold;
+      color: #ff00ff;
+      text-shadow: 0 3px 8px rgba(255, 0, 255, 0.7);
+      margin-bottom: 15px;
+    }
+    .status {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #ffffff;
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.7); 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      white-space: nowrap;
+    }
+    .status-box {
+      width: 4px;
+      height: 40px;
+      background: #ffffff;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="timer-container">
+    <div class="timer" id="timer"></div>
+    <div class="status">
+      <span class="break" id="status-break"></span>
+      <div class="status-box"></div>
+      <span class="session" id="status-session"></span>
+    </div>
+  </div>
+
+  <script>
+    const filePath = "timer_status.txt";
+
+    function updateTimer() {
+      fetch(filePath + "?nocache=" + new Date().getTime()) // Prevent caching
+        .then(response => response.text())
+        .then(data => {
+          const [time, status, session] = data.split("\n");
+          document.getElementById("timer").innerText = time.trim();
+          document.getElementById("status-break").innerText = status.trim();
+          document.getElementById("status-session").innerText = session.trim();
+        })
+        .catch(err => console.error("Error reading timer file:", err));
+    }
+
+    setInterval(updateTimer, 1000); // Update every second
+  </script>
+</body>
+</html>
